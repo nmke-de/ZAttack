@@ -1,11 +1,11 @@
-import _tkinter, time, _thread, pickle
+import tkinter, time, _thread, pickle
 
 
-main = _tkinter.Tk()
-world = _tkinter.Frame(main,width=200,height=200,relief="sunken",bd=1)
+main = tkinter.Tk()
+world = tkinter.Frame(main,width=200,height=200,relief="sunken",bd=1)
 world.pack()
 
-inv_label = _tkinter.Label(main,text="")
+inv_label = tkinter.Label(main,text="")
 gameover = False
 
 # classes/functions
@@ -14,19 +14,19 @@ class movable():
 	x = 0
 	y = 0
 	life = 3
-	animation = _tkinter.Label(world)
+	animation = tkinter.Label(world)
 	
 	def __init__(self):
 		self.x = 0
 		self.y = 0
 		self.life = 3
-		self.animation = _tkinter.Label(world)
+		self.animation = tkinter.Label(world)
 	"""
 	def __del__(self):
 		global world
 		global main
 		self.animation.destroy()
-		end = _tkinter.Label(main,text="You have lost.")
+		end = tkinter.Label(main,text="You have lost.")
 		end.pack()
 		#main.destroy()
 	def up(self,ev):
@@ -111,7 +111,7 @@ class player(movable):
 		global world
 		global main
 		world.destroy()
-		end = _tkinter.Label(main,text="You have lost.")
+		end = tkinter.Label(main,text="You have lost.")
 		end.pack()
 		main.destroy()
 	# End of class
@@ -153,13 +153,13 @@ z_x = pickle.load(f)
 z_y = pickle.load(f)
 f.close()
 #Actors
-the_player = player("X",p_x,p_y,_tkinter.Label(world))
-the_zombie = zombie("Z",z_x,z_y,_tkinter.Label(world))
-anchored_zombie = zombie("Z",50,50,_tkinter.Label(world))
+the_player = player("X",p_x,p_y,tkinter.Label(world))
+the_zombie = zombie("Z",z_x,z_y,tkinter.Label(world))
+anchored_zombie = zombie("Z",50,50,tkinter.Label(world))
 #Functions
 
 def info(x):
-	info_label = _tkinter.Label(main,text="Author: Nathanael M.\nProduct: Z-Attack Alpha 2\nby Dot.")
+	info_label = tkinter.Label(main,text="Author: Nathanael M.\nProduct: Z-Attack Alpha 2\nby Dot.")
 	info_label.pack()
 
 def act_zombie(x):
@@ -198,7 +198,7 @@ _thread.start_new_thread(anchored_zombie.act,())
 main.bind("<Key>",the_player.update)
 #main.bind("<i>",info)
 
-button = _tkinter.Button(main,text="Save + Quit",command=save_exit)
+button = tkinter.Button(main,text="Save + Quit",command=save_exit)
 button.pack()
 
 inv_label.pack()
