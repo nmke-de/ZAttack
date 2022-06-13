@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import tkinter, time, _thread, pickle
 
 
