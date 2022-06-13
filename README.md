@@ -21,13 +21,13 @@ To have fun.
 To start a new game, run:
 
 ```bash
-python new-game.py
+./new-game.py
 ```
 
 To play, run:
 
 ```bash
-python z-attack.py
+./z-attack.py
 ```
 
 ## Usage
