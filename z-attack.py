@@ -158,7 +158,7 @@ anchored_zombie = zombie("Z",50,50,tkinter.Label(world))
 #Functions
 
 def info(x):
-	info_label = tkinter.Label(main,text="Author: Nathanael M.\nProduct: Z-Attack Alpha 2\nby Dot.")
+	info_label = tkinter.Label(main,text="Author: Nathanael M.\nProduct: Z-Attack Alpha 2\nby nmke-de.")
 	info_label.pack()
 
 def act_zombie(x):
