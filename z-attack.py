@@ -117,7 +117,6 @@ class player(movable):
 	# End of class
 
 class zombie(movable):
-	#reaction_time = 1
 	def __init__(self,c,startpos_x,startpos_y,base):
 		movable.__init__(self,c,startpos_x,startpos_y,base)
 		self.reaction_time = 1
