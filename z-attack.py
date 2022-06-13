@@ -29,31 +29,31 @@ class movable():
 		end = tkinter.Label(main,text="You have lost.")
 		end.pack()
 		#main.destroy()
-	def up(self,ev):
+	def up(self):
 		self.y = self.y - 5
 		if self.y < 0:
 			self.y = 0
 		self.animation.place(x=self.x,y=self.y,anchor="nw")
 	
-	def left(self,ev):
+	def left(self):
 		self.x = self.x - 5
 		if self.x < 0:
 			self.x = 0
 		self.animation.place(x=self.x,y=self.y,anchor="nw")
 	
-	def down(self,ev):
+	def down(self):
 		self.y = self.y + 5
 		if self.y > 180:
 			self.y = 180
 		self.animation.place(x=self.x,y=self.y,anchor="nw")
 	
-	def right(self,ev):
+	def right(self):
 		self.x = self.x + 5
 		if self.x > 180:
 			self.x = 180
 		self.animation.place(x=self.x,y=self.y,anchor="nw")
 	
-	def beaten(self,ev):
+	def beaten(self):
 		self.life -= 1
 		print(self.life)
 		if self.life < 0:
@@ -95,13 +95,13 @@ class player(movable):
 			del self
 			return
 		if ev.char == "a":
-			self.left(0)
+			self.left()
 		elif ev.char =="w":
-			self.up(0)
+			self.up()
 		elif ev.char =="s":
-			self.down(0)
+			self.down()
 		elif ev.char =="d":
-			self.right(0)
+			self.right()
 		elif ev.char =="q":
 			save_exit()
 		if self.x==0 and self.y==5:
@@ -125,15 +125,15 @@ class zombie(movable):
 		while not gameover:
 			time.sleep(self.reaction_time)
 			if the_player.getpos()[1] > self.y:
-				self.down(0)
+				self.down()
 			elif the_player.getpos()[0] > self.x:
-				self.right(0)
+				self.right()
 			elif the_player.getpos()[1] < self.y:
-				self.up(0)
+				self.up()
 			elif the_player.getpos()[0] < self.x:
-				self.left(0)
+				self.left()
 			else:
-				the_player.beaten(0)
+				the_player.beaten()
 		
 	
 	#End of class
