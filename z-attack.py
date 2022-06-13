@@ -190,10 +190,6 @@ def save_exit():
 
 _thread.start_new_thread(the_zombie.act,())
 _thread.start_new_thread(anchored_zombie.act,())
-#main.bind("<w>",the_player.up)
-#main.bind("<a>",the_player.left)
-#main.bind("<s>",the_player.down)
-#main.bind("<d>",the_player.right)
 main.bind("<Key>",the_player.update)
 #main.bind("<i>",info)
 
